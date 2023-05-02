@@ -1,0 +1,29 @@
+mongoimport -d EMD -c exames --file emd.json --jsonArray
+
+# Respostas
+1. 
+    db.exames.find().count()
+    300
+2.
+    db.exames.find({"resultado":true}).count()
+    138
+3.
+    db.exames.distinct("género").length
+    2
+    
+    db.exames.distinct("género")
+    [ 'F', 'M' ]
+
+    db.exames.find({"género":"F"}).count()
+    142
+    db.exames.find({"género":"M"}).count()
+    158
+4.
+    db.exames.distinct("modalidade").length
+    17
+5.
+    db.exames.find({"clube":"GDGoma","federado":true}).count()
+    12
+6.
+    db.exames.find({género: "F", modalidade : "Triatlo"}).count()
+    9

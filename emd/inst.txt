@@ -1,0 +1,7 @@
+npx express-generator --view=pug emd
+
+npm i
+
+npm i mongoose --save
+
+npm start
